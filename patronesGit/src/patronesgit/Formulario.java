@@ -152,7 +152,7 @@ public class Formulario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El Apellido no es corecto");
             jTextFieldapellidos.setText("");
         }
-        Pattern p3 = Pattern.compile("[A-Z a-z]+[0-9]+@+[A-Z a-z]+[0-9]+.+[A-Z a-z]+2");
+        Pattern p3 = Pattern.compile("[A-Z a-z][0-9]@[A-Z a-z]+[0-9].[A-Z a-z]2");
         Matcher m3=p.matcher(jTextFieldcorreo.getText());
         if (m3.matches()) {
             
@@ -160,13 +160,21 @@ public class Formulario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El Correo no es corecto");
             jTextFieldcorreo.setText("");
         }
-        Pattern p4 = Pattern.compile("[0-9]{4,8}+[A-Z Ñ Á]");
+        Pattern p4 = Pattern.compile("[0-9]{4,8}[A-Z Ñ Á]");
         Matcher m4=p.matcher(jTextFielddni.getText());
         if (m4.matches()) {
             
         }else{
             JOptionPane.showMessageDialog(this, "El DNI no es corecto");
             jTextFielddni.setText("");
+        }
+        Pattern p5 = Pattern.compile("[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}");
+        Matcher m5=p.matcher(jTextFielddni.getText());
+        if (m5.matches()) {
+            
+        }else{
+            JOptionPane.showMessageDialog(this, "El Telefono no es corecto");
+            jTextFieldtelefono.setText("");
         }
         
     }//GEN-LAST:event_jButtonAceptarActionPerformed
